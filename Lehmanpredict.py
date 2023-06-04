@@ -94,13 +94,14 @@ model.summary()
 
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
-model_checkpoint_callback = keras.callbacks.ModelCheckpoint(
+if False:
+    model_checkpoint_callback = keras.callbacks.ModelCheckpoint(
         filepath='/Users/angelo/Documents/230530LehmanPrediction/alicebest.h5',
         monitor='accuracy',
         mode='max',
         save_best_only=True)
 
-model.fit(x_train, y_train,
+    model.fit(x_train, y_train,
         epochs=100,
         batch_size=256,
         validation_data=(x_val, y_val),
